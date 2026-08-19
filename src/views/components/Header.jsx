@@ -1,13 +1,14 @@
 import { LogIn, Leaf, Bell } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Header({ title, subtitle, userLabel, userRole, onLogout, notificationCount = 0 }) {
   return (
     <>
       <header className="top-header">
-        <div className="brand">
+        <Link className="brand" to="/" aria-label="Go to TerraSync home">
           <Leaf size={27} strokeWidth={2.1} />
           <span>Terra<span>Sync</span></span>
-        </div>
+        </Link>
         <button className="signout-button" onClick={onLogout}>
           <LogIn size={17} />
           Sign Out
